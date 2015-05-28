@@ -289,8 +289,12 @@ steal('can/util', 'can/util/bind', 'can/compute/read.js','can/compute/get_value_
 					return target.unbind(eventName || propertyName, handler);
 				};
 			} else {
-				this._get = can.proxy(this._get, target);
-				this._set = can.proxy(this._set, target);
+				this._get = function() {
+					return can.getObject(propertyName, [target]);
+				};
+				this._set = function(val) {
+					target[propertyName] = val;
+				};
 			}
 		},
 
