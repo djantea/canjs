@@ -294,13 +294,10 @@ steal('can/util', 'can/util/bind', 'can/compute/read.js','can/compute/get_value_
 				};
 				this._set = function(value) {
 					// allow setting properties n levels deep, if separated with dot syntax
-					var targetProperty = target,
-						properties = propertyName.split("."),
-						numProperties = properties.length - 1;
-					for (var i = 0; i < numProperties; i++) {
-						targetProperty = targetProperty[properties[i]];
-					}
-					targetProperty[properties[numProperties]] = value;
+					var properties = propertyName.split("."),
+						leafPropertyName = properties.pop(),
+						targetProperty = can.getObject(properties.join('.'), [target]);
+					targetProperty[leafPropertyName] = value;
 				};
 			}
 		},
