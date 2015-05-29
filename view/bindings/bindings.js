@@ -279,7 +279,7 @@ steal("can/util", "can/view/stache/mustache_core.js", "can/view/callbacks", "can
 				can.unbind.call(el, 'attributes', attributesHandler);
 			}
 		};
-		can.bind.call(el, 'attributes', attributesHandler)
+		can.bind.call(el, 'attributes', attributesHandler);
 	});
 
 

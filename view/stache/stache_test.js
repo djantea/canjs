@@ -4033,7 +4033,7 @@ steal("can/view/stache", "can/view", "can/test","can/view/mustache/spec/specs","
 		});
 
 		var template = can.stache('<button id="find-me" {{#if showAttr}}test-attr{{/if}}></button>');
-		var frag = template(state);
+		template(state);
 
 		state.attr('showAttr', false);
 		state.attr('showAttr', true);
