@@ -40,7 +40,7 @@ arguments listed as `name=value` pairs for the helper.
     
     can.stache.registerHelper("helper", function(options){
     
-      options.context === data.person //-> true
+      options.context === data.person.name //-> true
       
     })
     
