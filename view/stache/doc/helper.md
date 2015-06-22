@@ -69,7 +69,7 @@ value to a [can.compute]:
     
 And used by the following template:
 
-    <input type="text" {{me.value name}}/>
+    <input type="text" {{value me.name}}/>
     
 And rendered with:
     
